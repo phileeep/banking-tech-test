@@ -15,7 +15,6 @@ class Bank {
     } else {
       this.account.balance += balance
       this.newTransaction(0, balance)
-      console.table(this.account.transactions)
     }
   }
 
@@ -23,9 +22,8 @@ class Bank {
     if ((this.account.balance - balance) < 0) {
       throw new Error('Bank Balance Too Low');
     } else {
-    this.account.balance -= balance
-    this.newTransaction(balance, 0)
-    console.table(this.account.transactions)
+      this.account.balance -= balance
+      this.newTransaction(balance, 0)
     }
   }
 
@@ -36,7 +34,10 @@ class Bank {
     userTransaction.deposit = deposit
     userTransaction.balance = this.account.balance
     this.account.transactions.push(userTransaction)
-    console.log(userTransaction)
+  }
+
+  printBalance() {
+    console.table(this.account.transactions)
   }
 
   date() {

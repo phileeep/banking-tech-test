@@ -21,7 +21,6 @@ describe("Bank", function() {
       bank.deposit(11)
       bank.withdraw(10)
       expect(bank.account.balance).toEqual(1)
-      console.log(bank.account.balance)
     })
 
     it('will create a new transaction when the user deposits', () => {
@@ -41,5 +40,11 @@ describe("Bank", function() {
     it('will throw an error for a withdrawal if it exceeds the balance', () => {
       expect(() => { bank.withdraw(1000); }).toThrowError('Bank Balance Too Low');
     })
+
+    // needs a better test, unsure how to test console logs
+    it('can print the balance of the user', () => {
+      bank.deposit(11)
+      expect(bank.printBalance()).toEqual(console.table(bank.account.transactions))
+     })
   })
 })
