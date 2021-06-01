@@ -22,7 +22,7 @@ SpecRunner.html
 
 - Basic Commands:
 ```
-let bank = new Bank
+const bank = new Bank
 bank.deposit(100)
 bank.withdraw(10)
 bank.printBalance()
