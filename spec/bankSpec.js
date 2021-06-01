@@ -1,18 +1,18 @@
 'use strict';
 
-describe("Bank", function() {
+describe("Bank", function () {
   let bank;
   let date;
   let minBalance = 0
 
-  beforeEach(function(){
+  beforeEach(function () {
     bank = new Bank();
     date = bank.date()
     spyOn(bank, 'account.balance');
     bank.account.balance = minBalance;
   })
 
-  describe('Bank Functions', ()=>{
+  describe('Bank Functions', () => {
     it("can deposit into the bank balance", () => {
       expect(bank.account.balance).toEqual(minBalance)
       bank.deposit(10)
@@ -36,17 +36,21 @@ describe("Bank", function() {
     })
 
     it('will throw an error if the amount deposited is 0', () => {
-      expect(() => { bank.deposit(0); }).toThrowError('Cannot deposit 0');
+      expect(() => {
+        bank.deposit(0);
+      }).toThrowError('Cannot deposit 0');
     })
 
     it('will throw an error for a withdrawal if it exceeds the balance', () => {
-      expect(() => { bank.withdraw(1000); }).toThrowError('Bank Balance Too Low');
+      expect(() => {
+        bank.withdraw(1000);
+      }).toThrowError('Bank Balance Too Low');
     })
 
     // needs a better test, unsure how to test console logs
     it('can print the balance of the user', () => {
       bank.deposit(11)
       expect(bank.printBalance()).toEqual(console.table(bank.account.transactions))
-     })
+    })
   })
 })

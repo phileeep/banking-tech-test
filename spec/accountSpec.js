@@ -1,13 +1,13 @@
 'use strict';
 
-describe("Account", function() {
+describe("Account", function () {
   let account;
 
-  beforeEach(function(){
+  beforeEach(function () {
     account = new Account();
   })
 
-  describe('Account Functions', ()=>{
+  describe('Account Functions', () => {
     it("should open the account balance of a user with a balance of 0", () => {
       expect(account.balance).toEqual(0)
     })
