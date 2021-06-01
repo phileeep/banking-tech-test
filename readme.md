@@ -11,7 +11,7 @@ To build a banking app that handles:
 # To build 
 - Clone the repo
 ```
-git@github.com:phileeep/banking-tech-test.git
+git clone git@github.com:phileeep/banking-tech-test.git
 
 ```
 
@@ -20,10 +20,12 @@ git@github.com:phileeep/banking-tech-test.git
 SpecRunner.html
 ```
 
-Basic Commands:
+- Basic Commands:
 ```
 let bank = new Bank
 bank.deposit(100)
 bank.withdraw(10)
 bank.printBalance()
 ```
+
+- The commands and response will all happen in the console.
