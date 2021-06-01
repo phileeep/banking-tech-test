@@ -1,1 +1,0 @@
-# banking-tech-test
