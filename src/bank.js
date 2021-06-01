@@ -10,15 +10,23 @@ class Bank {
   }
 
   deposit(balance){
-    this.account.balance += balance
-    this.newTransaction(0, balance)
-    console.table(this.account.transactions)
+    if (balance == 0) {
+      throw new Error('Cannot deposit 0');
+    } else {
+      this.account.balance += balance
+      this.newTransaction(0, balance)
+      console.table(this.account.transactions)
+    }
   }
 
   withdraw(balance){
+    if ((this.account.balance - balance) < 0) {
+      throw new Error('Bank Balance Too Low');
+    } else {
     this.account.balance -= balance
     this.newTransaction(balance, 0)
     console.table(this.account.transactions)
+    }
   }
 
   newTransaction = function(withdrawal, deposit){
