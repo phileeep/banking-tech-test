@@ -8,7 +8,6 @@ describe("Bank", function () {
   beforeEach(function () {
     bank = new Bank();
     date = bank.date()
-    spyOn(bank, 'account.balance');
     bank.account.balance = minBalance;
   })
 
