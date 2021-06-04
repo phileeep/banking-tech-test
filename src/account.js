@@ -1,6 +1,6 @@
 class Account {
-  constructor() {
-    this.balance = 0
+  constructor(balance = 0) {
+    this.balance = balance
     this.transactions = [];
   }
 

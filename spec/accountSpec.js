@@ -5,13 +5,13 @@ describe("Account", function () {
   let minBalance = 0
   let date;
 
-
   beforeEach(function () {
     date = new Date();
     account = new Account(); 
   })
 
-  describe('Account Functions', () => {
+  describe('Account Opening', () => {
+    
     it("should open the account balance of a user with a balance of 0", () => {
       expect(account.balance).toEqual(0)
     })
@@ -21,7 +21,7 @@ describe("Account", function () {
     })
   })
   
-  describe('Bank Functions', () => {
+  describe('Account Functions', () => {
     it("can deposit into the bank balance", () => {
       expect(account.balance).toEqual(minBalance)
       account.deposit(10)

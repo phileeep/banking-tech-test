@@ -10,12 +10,11 @@ class Printer {
 
     transactions.reverse().forEach(transaction => {
       if (transaction.type == "credit") {
-        statement += `\n ${transaction.date.toLocaleString('en-GB', options)} || ${transaction.amount.toFixed(2)} ||        ||  ${transaction.balance.toFixed(2)}`
+        statement += `\n ${transaction.date.toLocaleString} || ${transaction.amount.toFixed(2)} ||        ||  ${transaction.balance.toFixed(2)}`
       } else {
-        statement += `\n ${transaction.date.toLocaleString('en-GB', options)} ||       || ${transaction.amount.toFixed(2)} ||  ${transaction.balance.toFixed(2)}`
+        statement += `\n ${transaction.date.toLocaleString} ||       || ${transaction.amount.toFixed(2)} ||  ${transaction.balance.toFixed(2)}`
       }
     })
     return statement
   }
-  
 }
