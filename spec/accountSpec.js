@@ -16,4 +16,4 @@ describe("Account", function () {
       expect(account.transactions).toEqual([])
     })
   })
-})
+  })
