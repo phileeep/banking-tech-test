@@ -1,7 +1,7 @@
 class Account {
   constructor() {
     this.balance = 0
-    this.transactions = []
+    this.transactions = [];
   }
 
   deposit(amount){
@@ -18,7 +18,7 @@ class Account {
       throw new Error('Bank Balance Too Low');
     } else {
       this.balance -= amount
-      this.transactions.push(new Transaction(amount, 'debit', this.balance))
+      this.transactions.push(new Transaction(-amount, 'debit', this.balance))
     }
   }
 }
